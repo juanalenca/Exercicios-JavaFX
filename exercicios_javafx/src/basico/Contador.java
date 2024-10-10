@@ -10,6 +10,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Contador extends Application {
+	
+	private int contador = 0;
 
 	
 	@Override
@@ -17,10 +19,24 @@ public class Contador extends Application {
 		
 		
 		Label labelTitulo = new Label("Contador");
+		labelTitulo.getStyleClass().add("titulo");
+		
 		Label labelNumero = new Label("0");
+		labelNumero.getStyleClass().add("numero");		
+		
 		
 		Button botaoDecremento = new Button("-");
+		botaoDecremento.setOnAction(e -> {
+			contador--;
+			labelNumero.setText(Integer.toString(contador));
+		});
+		
+		
 		Button botaoIncremento = new Button("+");
+		botaoIncremento.setOnAction(e -> {
+			contador++;
+			labelNumero.setText(Integer.toString(contador));
+		});
 		
 		HBox boxBotoes = new HBox();
 		boxBotoes.setAlignment(Pos.CENTER);
@@ -28,14 +44,20 @@ public class Contador extends Application {
 		boxBotoes.getChildren().add(botaoDecremento);
 		boxBotoes.getChildren().add(botaoIncremento);
 		
-		VBox boxPrincipal = new VBox();
-		boxPrincipal.setAlignment(Pos.CENTER);
-		boxPrincipal.setSpacing(10);
-		boxPrincipal.getChildren().add(labelTitulo);
-		boxPrincipal.getChildren().add(labelNumero);
-		boxPrincipal.getChildren().add(boxBotoes);
+		VBox boxConteudo = new VBox();
+		boxConteudo.getStyleClass().add("conteudo");
+		boxConteudo.setAlignment(Pos.CENTER);
+		boxConteudo.setSpacing(10);
+		boxConteudo.getChildren().add(labelTitulo);
+		boxConteudo.getChildren().add(labelNumero);
+		boxConteudo.getChildren().add(boxBotoes);
 		
-		Scene cenaPrincipal = new Scene(boxPrincipal, 400, 400);
+		String caminhoDoCss = getClass()
+				.getResource("/basico/Contador.css").toExternalForm();
+		
+		Scene cenaPrincipal = new Scene(boxConteudo, 400, 400);
+		cenaPrincipal.getStylesheets().add(caminhoDoCss);
+		cenaPrincipal.getStylesheets().add("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 		
 		primaryStage.setScene(cenaPrincipal);
 		primaryStage.show();
