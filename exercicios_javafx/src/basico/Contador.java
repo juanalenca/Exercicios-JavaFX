@@ -14,60 +14,88 @@ public class Contador extends Application {
 	private int contador = 0;
 
 	
+	// Método start: ponto de entrada da aplicação JavaFX, onde a interface é construída
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		
-		Label labelTitulo = new Label("Contador");
-		labelTitulo.getStyleClass().add("titulo");
-		
-		Label labelNumero = new Label("0");
-		labelNumero.getStyleClass().add("numero");		
-		
-		
-		Button botaoDecremento = new Button("-");
-		botaoDecremento.setOnAction(e -> {
-			contador--;
-			labelNumero.setText(Integer.toString(contador));
-		});
-		
-		
-		Button botaoIncremento = new Button("+");
-		botaoIncremento.setOnAction(e -> {
-			contador++;
-			labelNumero.setText(Integer.toString(contador));
-		});
-		
-		HBox boxBotoes = new HBox();
-		boxBotoes.setAlignment(Pos.CENTER);
-		boxBotoes.setSpacing(10);
-		boxBotoes.getChildren().add(botaoDecremento);
-		boxBotoes.getChildren().add(botaoIncremento);
-		
-		VBox boxConteudo = new VBox();
-		boxConteudo.getStyleClass().add("conteudo");
-		boxConteudo.setAlignment(Pos.CENTER);
-		boxConteudo.setSpacing(10);
-		boxConteudo.getChildren().add(labelTitulo);
-		boxConteudo.getChildren().add(labelNumero);
-		boxConteudo.getChildren().add(boxBotoes);
-		
-		String caminhoDoCss = getClass()
-				.getResource("/basico/Contador.css").toExternalForm();
-		
-		Scene cenaPrincipal = new Scene(boxConteudo, 400, 400);
-		cenaPrincipal.getStylesheets().add(caminhoDoCss);
-		cenaPrincipal.getStylesheets().add("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
-		
-		primaryStage.setScene(cenaPrincipal);
-		primaryStage.show();
+		// Cria um rótulo (Label) para o título "Contador"
+        Label labelTitulo = new Label("Contador");
+        // Adiciona uma classe CSS ao rótulo do título
+        labelTitulo.getStyleClass().add("titulo");
+        
+
+        // Cria um rótulo para exibir o valor atual do contador
+        Label labelNumero = new Label("0");
+        // Adiciona uma classe CSS ao rótulo do número
+        labelNumero.getStyleClass().add("numero");
+
+        
+        // Cria um botão para decrementar o valor do contador
+        Button botaoDecremento = new Button("-");
+        
+        botaoDecremento.getStyleClass().add("botoes");
+        
+        // Define o evento de clique do botão de decremento
+        botaoDecremento.setOnAction(e -> {
+            contador--; // Decrementa o contador
+            labelNumero.setText(Integer.toString(contador)); // Atualiza o rótulo com o novo valor
+        });
+
+        
+        // Cria um botão para incrementar o valor do contador
+        Button botaoIncremento = new Button("+");
+        
+        botaoIncremento.getStyleClass().add("botoes");
+        
+        // Define o evento de clique do botão de incremento
+        botaoIncremento.setOnAction(e -> {
+            contador++; // Incrementa o contador
+            labelNumero.setText(Integer.toString(contador)); // Atualiza o rótulo com o novo valor
+        });
+
+        
+        // Cria um layout horizontal (HBox) para organizar os botões de incremento e decremento
+        HBox boxBotoes = new HBox();
+        boxBotoes.setAlignment(Pos.CENTER); // Centraliza os botões horizontalmente
+        boxBotoes.setSpacing(10); // Define um espaçamento entre os botões
+        boxBotoes.getChildren().add(botaoDecremento); // Adiciona o botão de decremento ao layout
+        boxBotoes.getChildren().add(botaoIncremento); // Adiciona o botão de incremento ao layout
+
+        
+        // Cria um layout vertical (VBox) para organizar o título, o número e os botões
+        VBox boxConteudo = new VBox();
+        boxConteudo.getStyleClass().add("conteudo"); // Aplica uma classe CSS ao layout
+        boxConteudo.setAlignment(Pos.CENTER); // Centraliza o conteúdo verticalmente
+        boxConteudo.setSpacing(10); // Define um espaçamento entre os elementos
+        boxConteudo.getChildren().add(labelTitulo); // Adiciona o título ao layout
+        boxConteudo.getChildren().add(labelNumero); // Adiciona o rótulo do número ao layout
+        boxConteudo.getChildren().add(boxBotoes); // Adiciona os botões ao layout
+
+        
+        // Carrega o arquivo CSS externo para estilizar a interface
+        String caminhoDoCss = getClass()
+                .getResource("/basico/Contador.css").toExternalForm();
+
+        
+        // Cria a cena principal da aplicação com o layout e define suas dimensões
+        Scene cenaPrincipal = new Scene(boxConteudo, 400, 400);
+        
+        // Adiciona o CSS personalizado à cena
+        cenaPrincipal.getStylesheets().add(caminhoDoCss);
+        
+        // Adiciona uma fonte externa através de uma URL
+        cenaPrincipal.getStylesheets().add("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+        // Define a cena no palco principal e exibe a janela
+        primaryStage.setScene(cenaPrincipal);
+        primaryStage.show();
 		
 	}
 	
 	
 	public static void main(String[] args) {
 		
-		launch(args);
+		launch(args); // Inicia a aplicação JavaFX
 		
 	}
 	
