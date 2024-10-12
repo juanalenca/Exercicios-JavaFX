@@ -12,6 +12,19 @@ import javafx.stage.Stage;
 public class Contador extends Application {
 	
 	private int contador = 0;
+	
+	private void atualizarLabelNumero(Label label) {
+		label.setText(Integer.toString(contador));
+		
+		label.getStyleClass().remove("verde");
+		label.getStyleClass().remove("vermelho");
+		
+		if(contador > 0) {
+			label.getStyleClass().add("verde");
+		} else if(contador < 0) {
+			label.getStyleClass().add("vermelho");
+		}
+	}
 
 	
 	// Método start: ponto de entrada da aplicação JavaFX, onde a interface é construída
@@ -38,7 +51,7 @@ public class Contador extends Application {
         // Define o evento de clique do botão de decremento
         botaoDecremento.setOnAction(e -> {
             contador--; // Decrementa o contador
-            labelNumero.setText(Integer.toString(contador)); // Atualiza o rótulo com o novo valor
+            atualizarLabelNumero(labelNumero); // Atualiza o rótulo com o novo valor
         });
 
         
@@ -49,8 +62,8 @@ public class Contador extends Application {
         
         // Define o evento de clique do botão de incremento
         botaoIncremento.setOnAction(e -> {
-            contador++; // Incrementa o contador
-            labelNumero.setText(Integer.toString(contador)); // Atualiza o rótulo com o novo valor
+            contador++;
+            atualizarLabelNumero(labelNumero);
         });
 
         
