@@ -12,3 +12,21 @@
 	-fx-text-fill: #eee;
 	-fx-font-size: 22px;
 }
+
+.botoes {
+	-fx-background-color: white;
+	-fx-text-fill: #29d6bc;
+	-fx-font-size: 28px;
+	-fx-min-width: 60px;
+	-fx-min-height: 60px;
+	-fx-background-radius: 30px;
+}
+
+.verde{
+	-fx-text-fill: #10ef6f;
+}
+
+.vermelha{
+	-fx-text-fill: #d92684;
+}
+
