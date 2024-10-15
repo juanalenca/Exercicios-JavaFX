@@ -3,4 +3,5 @@ module exerciciosfx {
 	requires javafx.graphics;
 	
 	opens basico;
+	opens layout;
 }
