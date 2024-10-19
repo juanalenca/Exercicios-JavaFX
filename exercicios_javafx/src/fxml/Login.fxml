@@ -3,11 +3,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="fxml.LoginControlador">
+<GridPane 
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="fxml.LoginControlador"
+	styleClass="Login">
 
 	<Label 
 		text="Seja Bem-vindo" 
+		styleClass="login-titulo"
 		GridPane.columnIndex="0"
 		GridPane.rowIndex="0"
 	></Label>
@@ -16,6 +19,7 @@
 	
 	<Label 
 		text="E-mail: "
+		styleClass="login-form-label"
 		GridPane.columnIndex="0"
 		GridPane.rowIndex="1"
 	></Label>
@@ -29,6 +33,7 @@
 	
 	<Label 
 		text="Senha: "
+		styleClass="login-form-label"
 		GridPane.columnIndex="0"
 		GridPane.rowIndex="2"
 	></Label>
@@ -40,9 +45,11 @@
 	></PasswordField>
 
 
+
 	<!-- #: referencia a chamada de um método -->
 	<Button 
 		text="Entrar"
+		styleClass="login-form-botao"
 		GridPane.columnIndex="0"
 		GridPane.rowIndex="3"
 		onAction="#entrar"
