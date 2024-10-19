@@ -10,10 +10,10 @@ public class Quadrado extends Rectangle {
 	private String[] cores = { "#c33c5e", "#39aac6", "#28d79a", "#fb750e", "#6657a8", "#f9060e" };
 
 	public Quadrado() {
-		this(100, 100);
+		this(100);
 	}
 
-	public Quadrado(int largura, int altura) {
+	public Quadrado(int tamanho) {
 		
 		setWidth(largura);
 		setHeight(altura);
