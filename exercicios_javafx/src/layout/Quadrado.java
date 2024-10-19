@@ -15,8 +15,8 @@ public class Quadrado extends Rectangle {
 
 	public Quadrado(int tamanho) {
 		
-		setWidth(largura);
-		setHeight(altura);
+		setWidth(tamanho);
+		setHeight(tamanho);
 
 		setFill(Color.web(cores[i]));
 		
