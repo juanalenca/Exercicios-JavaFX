@@ -15,7 +15,8 @@ public class AppLayout extends Application {
 		//raiz = new TesteBorderPane();
 		//raiz = new TesteFlowPane();
 		//raiz = new TesteGridPane();
-		raiz = new TesteStackPlane();
+		//raiz = new TesteStackPlane();
+		raiz = new TesteTilePane();
 		
 		Scene principal = new Scene(raiz, 800, 600);
 		
