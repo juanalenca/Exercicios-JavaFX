@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
+<GridPane xmlns:fx="http://javafx.com/fxml/1">
 
-</BorderPane>
+</GridPane>
