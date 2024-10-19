@@ -14,6 +14,7 @@
 			left="40" 
 			right="40" 
 			top="40"
+			bottom="40"
 		/>
 	</padding>
 	
@@ -39,7 +40,14 @@
 		GridPane.rowIndex="0"
 		GridPane.columnSpan="2"
 		GridPane.halignment="CENTER"
-	></Label>
+	>
+		<GridPane.margin>
+			<Insets 
+				left="20" 
+				bottom="20" 
+			/>
+		</GridPane.margin>
+	</Label>
 	
 	
 	
@@ -81,6 +89,13 @@
 		GridPane.columnSpan="2"
 		GridPane.halignment="CENTER"
 		onAction="#entrar"
-	></Button>
+	>
+		<GridPane.margin>
+			<Insets 
+				left="20" 
+				bottom="20" 
+			/>
+		</GridPane.margin>
+	</Button>
 
 </GridPane>
